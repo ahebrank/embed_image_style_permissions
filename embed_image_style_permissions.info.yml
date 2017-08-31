@@ -1,4 +1,4 @@
-name: Entity Image Style Permissions
+name: Embed Image Style Permissions
 type: module
 description: Set access permissions on individual image styles
 core: 8.x

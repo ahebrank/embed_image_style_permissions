@@ -26,19 +26,20 @@ class PermissionsGenerator {
   /**
    * Builds a list of entity permissions for a given type.
    *
-   * @param Array $carry
-   *   The result of the previous iteration
-   * @param ImageStyle $style
+   * @param array $carry
+   *   The result of the previous iteration.
+   * @param \Drupal\image\Entity\ImageStyle $style
    *   The entity type.
    *
    * @return array
    *   An array of permissions.
    */
-  private function buildPermissions($carry, ImageStyle $style) {
+  private function buildPermissions(array $carry, ImageStyle $style) {
     return array_merge($carry, [
       'access image style for ' . $style->id() => [
         'title' => $this->t('Access image style %style', ['%style' => $style->label()]),
       ],
     ]);
   }
+
 }

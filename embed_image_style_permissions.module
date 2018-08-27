@@ -33,20 +33,19 @@ function embed_image_style_permissions_form_alter(&$form, FormStateInterface $fo
       $current_user = \Drupal::currentUser();
       $can_administer_image_styles = $current_user->hasPermission('administer image styles');
       $image_styles = embed_image_style_permissions_filter_styles(image_style_options(FALSE), $current_user);
-      
-      // filter the options
+
+      // Filter the options.
       $form['attributes']['data-entity-embed-display-settings']['image_style']['#options'] = $image_styles;
-      $form['attributes']['data-entity-embed-display-settings']['image_style']['#empty_option'] = $can_administer_image_styles? t('None (original image)') : null;
+      $form['attributes']['data-entity-embed-display-settings']['image_style']['#empty_option'] = $can_administer_image_styles ? t('None (original image)') : NULL;
     }
   }
 }
 
 /**
-  * filter a list of styles based on permissions
-*/
+ * Filter a list of styles based on permissions.
+ */
 function embed_image_style_permissions_filter_styles($styles, $user) {
-  return array_filter($styles, function($style_id) use ($user) {
+  return array_filter($styles, function ($style_id) use ($user) {
     return $user->hasPermission('access image style for ' . $style_id);
   }, ARRAY_FILTER_USE_KEY);
 }
-  

@@ -4,4 +4,4 @@ description: Set access permissions on individual image styles
 core: 8.x
 package: NewCity
 dependencies:
-  - drupal:entity_browser
+  - entity_browser:entity_browser

@@ -9,8 +9,5 @@
   "support": {
     "issues": "https://www.drupal.org/project/issues/embed_image_style_permissions",
     "source": "http://cgit.drupalcode.org/embed_image_style_permissions"
-  },
-  "require": {
-    "drupal/entity_browser": "~1 || ^2.*"
   }
 }
